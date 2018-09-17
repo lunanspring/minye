@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { StuCtrComponent } from './stu-ctr/stu-ctr.component';
 import { ButtonCtrComponent } from './button-ctr/button-ctr.component';
+import { StudentsService } from './shared/students.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ButtonCtrComponent } from './button-ctr/button-ctr.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [StudentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,39 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 <app-stu-form></app-stu-form>
 <app-button-ctr></app-button-ctr>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">敏爷老师傅点名装置</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home</a>
+      <a class="nav-item nav-link" href="#"> stu-management</a>
+    </div>
+  </div>
+</nav>
+<div class="units test">
+        <p>{{units}}</p>
+        <p>{{tens}}</p>
+    </div>
+<div class="container">
+  <div class="d-flex flex-wrap">
+    <div *ngFor="let stu of stuList" style="width:10%" class="d-flex flex-column text-center ">
+      <div [ngClass]="{'units': stu.units!=-1,'tens' : stu.tens!=-1 , 'bingo':stu.tens!=-1&&stu.units!=-1}" 
+          class="btn btn-light">
+        <span>{{stu.stu_id}}</span>
+        <br>
+        <span>{{stu.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-outline-primary">add</button>
+    <button type="button" class="btn btn-outline-danger">del</button>
+    <button type="button" (click)="call('units')" class="btn btn-outline-warning">units</button>
+    <button type="button" (click)="call('tens')"class="btn btn-outline-info">tens</button>
+    <button type="button" (click)="clear()"class="btn btn-outline-secondary">reset</button>
+  </div>
+</div>

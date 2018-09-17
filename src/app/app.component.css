@@ -1,0 +1,13 @@
+.test{
+    padding: 2px;
+    margin: 3px
+}
+.units{
+    background-color: #ffc107;
+}
+.tens{
+    background-color: #17a2b8;
+}
+.bingo{
+    background-color: #dc3545;
+}
