@@ -24,6 +24,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StuCtrComponent } from './components/stu-ctr/stu-ctr.component';
 
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     NavComponent,
     FooterComponent,
-    StuCtrComponent
+    StuCtrComponent,
   ],
   imports: [
     BrowserModule,

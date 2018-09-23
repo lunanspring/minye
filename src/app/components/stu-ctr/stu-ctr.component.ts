@@ -10,7 +10,7 @@ import { Student } from '../../class/student';
 export class StuCtrComponent implements OnInit {
 
   stuForm = this.fb.group({
-    name: ['', Validators.required,],
+    name: ['', Validators.required, ],
     stuid: ['', [Validators.required, Validators.min(1), Validators.max(99)]]
   });
 
@@ -19,10 +19,10 @@ export class StuCtrComponent implements OnInit {
 
   ngOnInit() {
   }
-  add() {
-    this.stuDataService.addStu(new Student(this.stuForm.value.name, this.stuForm.value.stuid, -1, -1));
+  add(fileName) {
+    this.stuDataService.addStu(new Student(this.stuForm.value.name, this.stuForm.value.stuid, -1, -1), fileName);
   }
-  del() {
-    this.stuDataService.delStu( this.stuForm.value.stuid);
+  del(fileName) {
+    this.stuDataService.delStu(this.stuForm.value.stuid, fileName);
   }
 }

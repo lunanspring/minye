@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
 
   tensCheck = -1;
 
-  constructor( private stuDataService: StuDataService) { }
+  constructor(private stuDataService: StuDataService) { }
 
   ngOnInit() {
-    this.stuList = this.stuDataService.getStuList();
+    this.stuList = this.stuDataService.getStuList('18药剂2班');
   }
   call(pop: string): void {
     const n = Math.floor(Math.random() * 10);
@@ -62,6 +62,10 @@ export class HomeComponent implements OnInit {
     }
     this.unitsCheck = -1;
     this.tensCheck = -1;
+  }
+
+  getList(f: string): void {
+    this.stuList = this.stuDataService.getStuList(f);
   }
 }
 
